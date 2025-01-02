@@ -9,9 +9,34 @@
 <body>
   <div class="container">
     <h1>Text to PDF Converter</h1>
-    <textarea id="textInput" placeholder="Enter your text here..."></textarea>
+    
+    <!-- Text Area Input -->
+    <textarea id="textInput" placeholder="Enter your text here..." oninput="updateWordCounter()"></textarea>
+    
+    <!-- File Name Input -->
     <input type="text" id="fileName" placeholder="Enter PDF file name" />
+    
+    <!-- Font Style Selector -->
+    <select id="fontStyle">
+      <option value="Helvetica">Helvetica</option>
+      <option value="Times">Times New Roman</option>
+      <option value="Courier">Courier</option>
+    </select>
+    
+    <!-- Word Counter -->
+    <p id="wordCounter">Words: 0</p>
+    
+    <!-- Preview Button -->
+    <button id="previewButton">Preview</button>
+    
+    <!-- Convert Button -->
     <button id="convertButton">Convert & Download PDF</button>
+    
+    <!-- Theme Selector -->
+    <label class="switch">
+      <input type="checkbox" id="themeToggle" />
+      <span class="slider round"></span>
+    </label>
   </div>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
